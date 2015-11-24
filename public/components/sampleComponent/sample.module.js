@@ -1,1 +1,4 @@
-sampleModule
+angular
+    .module('sample', [
+      
+    ]);

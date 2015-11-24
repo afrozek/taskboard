@@ -1,14 +1,14 @@
-(function () {
+(function() {
 	'use strict'
 
 	angular
 		.module('sample')
-		.controller('sample', sample)
+		.controller('sampleCtrl', sampleCtrl)
 
 	sample.inject = ['']
 
-	function sample() {
-		
+	function sampleCtrl() {
+
 	    var vm = this;
 
 	    vm.gotoSession = gotoSession;

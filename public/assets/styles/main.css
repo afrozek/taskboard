@@ -21,6 +21,14 @@ body{
 	text-align: center;
 }
 
+.floatLeft{
+	float: left;
+}
+
+.floatRight{
+	float: right;
+}
+
 h1,h2,h3,h4{
 	margin: 20px;
 }
@@ -138,7 +146,15 @@ h1,h2,h3,h4{
 }
 
 .taskArrows{
+	overflow: auto;
+}
 
+.leftArrow{
+	padding-left: 10px;
+}
+
+.rightArrow{
+	padding-right: 10px;
 }
 
 

@@ -95,9 +95,15 @@ h1,h2,h3,h4{
 	text-align: center;
 }
 
+.boardContainer{
+	
+}
+
+
 .board{
 	margin-top: 30px;
 }
+
 
 
 
@@ -108,7 +114,8 @@ h1,h2,h3,h4{
 }
 
 .sectionContainer{
-
+	padding-left: 10px;
+	padding-right: 10px;
 }
 
 .sectionHeader{
@@ -124,7 +131,8 @@ h1,h2,h3,h4{
 /*tasks*/
 
 .taskContainer{
-
+	margin-bottom: 10px;
+	position: relative;
 }
 
 .taskHeader{
@@ -139,6 +147,26 @@ h1,h2,h3,h4{
 .taskBody{
 	background: skyblue;
 	padding: 10px;
+}
+
+.taskContainer:nth-child(1n+1) .taskBody{
+	background: #ADE545;
+}
+
+.taskContainer:nth-child(2n+1) .taskBody{
+	background: #CE74E7;
+}
+
+.taskContainer:nth-child(3n+1) .taskBody{
+	background: #EDDD40;
+}
+
+.taskContainer:nth-child(4n+1) .taskBody{
+	background: #ED9540;
+}
+
+.taskContainer:nth-child(5n+1) .taskBody{
+	background: skyblue;
 }
 
 .taskFooter{

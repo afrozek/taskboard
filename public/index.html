@@ -4,34 +4,23 @@
     <meta charset="UTF-8">
     <title>Taskboard</title>
 
-    <!-- load jquery -->
     <script src="assets/lib/jquery/dist/jquery.min.js"></script>
-
-    <!-- load bootstrap -->
     <link rel="stylesheet" href="assets/lib/bootstrap/dist/css/bootstrap.min.css">
     <script src="assets/lib/bootstrap/dist/js/bootstrap.min.js"></script>
 
-    <!-- load fonts -->
     <link href='http://fonts.googleapis.com/css?family=Jura:100,200,300,400,500,600' rel='stylesheet' type='text/css'>
 
-    <!-- load custom CSS -->
     <link rel="stylesheet" href="assets/styles/main.css">
 
-    <!-- load angular -->
-    <script src="assets/lib/angular/angular.min.js"></script>
-
-    <!-- load ui-router -->
+    <script src="assets/lib/angular/angular.js"></script>
     <script src="assets/lib/angular-ui-router/release/angular-ui-router.min.js"></script>
-
-    <!-- load main app -->
-    <script src="app.module.js"></script>
-    <script src="app.controller.js"></script>
-    <script src="app.routes.js"></script>
 </head>
-<body ng-app="app">
 
-<!-- NAVBAR -->
+<body ng-app="app">
 <header></header>
 	<div ui-view></div>
+
+    <!-- load main app -->
+    <script src="main.js"></script>
 </body>
 </html>

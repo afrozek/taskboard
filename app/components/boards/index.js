@@ -4,13 +4,13 @@ var dbInterface = require('../dbHelpers/dbInterface.js');
 var passportJwt = require('../auth/jwtStrategy.js')();
 
 function todoListRoutes (app, express) {
-	var todoListApi = express.Router();
+	var boardsApi = express.Router();
 
-	todoListApi.use(passportJwt, function (req, res, next) {
+	boardsApi.use(passportJwt, function (req, res, next) {
 		next();
 	});
 
-	todoListApi.route('/')
+	boardsApi.route('/')
 		.get(function (req, res) {
 			dbInterface.getFromDb('Todo')
 				.exec(function (err, todos) {
@@ -34,7 +34,7 @@ function todoListRoutes (app, express) {
 				});
 		});
 
-	todoListApi.route('/:_id')
+	boardsApi.route('/:_id')
 		.get(function (req, res) {
 			dbInterface.getFromDb('Todo', { _id: req.params._id }, null, true)
 				.exec(function (err, Todo) {
@@ -80,5 +80,5 @@ function todoListRoutes (app, express) {
 		});
 
 	//After configuring router, make sure to return it
-	return todoListApi;
+	return boardsApi;
 }

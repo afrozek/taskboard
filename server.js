@@ -29,8 +29,8 @@ app.use('/api/auth', auth);
 var users = require('./app/components/users')(app, express);
 app.use('/api/users', users);
 
-var todoList = require('./app/components/boards')(app, express);
-app.use('/api/todos', todoList);
+var boards = require('./app/components/boards')(app, express);
+app.use('/api/todos', boards);
 
 app.get('*', function (req, res) {
 	res.sendFile(__dirname + '/public/index.html');

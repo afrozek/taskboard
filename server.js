@@ -30,7 +30,7 @@ var users = require('./app/components/users')(app, express);
 app.use('/api/users', users);
 
 var boards = require('./app/components/boards')(app, express);
-app.use('/api/todos', boards);
+app.use('/api/boards', boards);
 
 app.get('*', function (req, res) {
 	res.sendFile(__dirname + '/public/index.html');

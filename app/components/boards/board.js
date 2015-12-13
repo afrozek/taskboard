@@ -2,8 +2,8 @@ var mongoose = require('mongoose'),
 	bcrypt = require('bcrypt-nodejs');
 
 var BoardSchema = new mongoose.Schema({
-	owner: String,
-	title: String,
+	owner: { type: String, required: true },
+	title: { type: String, required: true },
 	collaborators: [],
 
 	columns: [

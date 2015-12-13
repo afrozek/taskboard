@@ -12,31 +12,48 @@ function todoListRoutes (app, express) {
 
 	boardsApi.route('/')
 		.get(function (req, res) {
-			dbInterface.getFromDb('Todo')
-				.exec(function (err, todos) {
+			dbInterface.getFromDb('Board')
+				.exec(function (err, boards) {
 					if (err)
 						return res.send(err);
 
-					res.json(todos);
+					res.json(boards);
 				});
 		})
 		.post(function (req, res) {
-			req.body.owner = req.user.email;
+			var owner = req.body.owner,
+				title = req.body.title,
+				sections = req.body.sections;
 
-			dbInterface.postToDb('Todo', req.body)
-				.addBack(function (err) {
+			dbInterface.getFromDb('Board', { owner: owner, title: title })
+				.exec(function (err, boards) {
 					if (err)
 						return res.send(err);
 
-					res.json({
-						message: 'Todo successfully saved'
-					})
+					if (boards.length) {
+						return res.json({
+							success: false,
+							message: 'You cannot have two boards with the same title'
+						});
+					} else {
+						dbInterface.postToDb('Board', req.body)
+							.addBack(function (err) {
+								if (err)
+									return res.send(err);
+
+								res.json({
+									success: true,
+									message: 'Board successfully created'
+								})
+							});
+					}
+							
 				});
 		});
 
 	boardsApi.route('/:_id')
 		.get(function (req, res) {
-			dbInterface.getFromDb('Todo', { _id: req.params._id }, null, true)
+			dbInterface.getFromDb('Board', { _id: req.params._id }, null, true)
 				.exec(function (err, Todo) {
 					if (err)
 						return res.send(err);
@@ -45,7 +62,7 @@ function todoListRoutes (app, express) {
 				});
 		})
 		.put(function (req, res) {
-			dbInterface.getFromDb('Todo', { _id: req.params._id }, null, true)
+			dbInterface.getFromDb('Board', { _id: req.params._id }, null, true)
 				.exec(function (err, Todo) {
 					if (err)
 						return res.send(err);
@@ -62,12 +79,12 @@ function todoListRoutes (app, express) {
 				});
 		})
 		.delete(function (req, res) {
-			dbInterface.getFromDb('Todo', { _id: req.params._id }, null, true)
+			dbInterface.getFromDb('Board', { _id: req.params._id }, null, true)
 				.exec(function (err, Todo) {
 					if (err)
 						return res.send(err);
 
-					dbInterface.deleteFromDb('Todo')
+					dbInterface.deleteFromDb('Board')
 						.exec(function (err) {
 							if (err)
 								return res.send(err);

@@ -29,7 +29,7 @@ app.use('/api/auth', auth);
 var users = require('./app/components/users')(app, express);
 app.use('/api/users', users);
 
-var todoList = require('./app/components/todoList')(app, express);
+var todoList = require('./app/components/boards')(app, express);
 app.use('/api/todos', todoList);
 
 app.get('*', function (req, res) {

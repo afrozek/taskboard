@@ -1,9 +1,9 @@
-module.exports = todoListRoutes;
+module.exports = BoardRoutes;
 
 var dbInterface = require('../dbHelpers/dbInterface.js');
 var passportJwt = require('../auth/jwtStrategy.js')();
 
-function todoListRoutes (app, express) {
+function BoardRoutes (app, express) {
 	var boardsApi = express.Router();
 
 	boardsApi.use(passportJwt, function (req, res, next) {
@@ -54,33 +54,33 @@ function todoListRoutes (app, express) {
 	boardsApi.route('/:_id')
 		.get(function (req, res) {
 			dbInterface.getFromDb('Board', { _id: req.params._id }, null, true)
-				.exec(function (err, Todo) {
+				.exec(function (err, board) {
 					if (err)
 						return res.send(err);
 
-					res.json(Todo);
+					res.json(board);
 				});
 		})
 		.put(function (req, res) {
 			dbInterface.getFromDb('Board', { _id: req.params._id }, null, true)
-				.exec(function (err, Todo) {
+				.exec(function (err, board) {
 					if (err)
 						return res.send(err);
 
-					dbInterface.putToDb(req.body, Todo)
+					dbInterface.putToDb(req.body, board)
 						.addBack(function (err) {
 							if (err)
 								return res.send(err);
 
 							res.json({
-								message: 'Todo successfully updated'
+								message: 'Board successfully updated'
 							})
 						});
 				});
 		})
 		.delete(function (req, res) {
 			dbInterface.getFromDb('Board', { _id: req.params._id }, null, true)
-				.exec(function (err, Todo) {
+				.exec(function (err, board) {
 					if (err)
 						return res.send(err);
 
@@ -90,7 +90,7 @@ function todoListRoutes (app, express) {
 								return res.send(err);
 
 							res.json({
-								message: 'Todo successfully deleted'
+								message: 'Board successfully deleted'
 							});
 						})
 				});

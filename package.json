@@ -4,6 +4,7 @@
   "description": "a simple task manager",
   "main": "server.js",
   "scripts": {
+    "postinstall": "node_modules/bower/bin/bower install",
     "startgulp": "node_modules/gulp/bin/gulp.js"
   },
   "author": "",
@@ -15,7 +16,7 @@
     "express": "^4.13.3",
     "gulp": "^3.9.0",
     "jsonwebtoken": "^5.4.1",
-    "mongoose": "^4.2.7",
+    "mongoose": "^4.3.1",
     "morgan": "^1.6.1",
     "nodemon": "^1.8.1",
     "passport": "^0.3.2",

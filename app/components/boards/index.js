@@ -11,6 +11,7 @@ function BoardRoutes (app, express) {
 	});
 
 	boardsApi.route('/')
+
 		.get(function (req, res) {
 			dbInterface.getFromDb('Board')
 				.exec(function (err, boards) {
@@ -21,11 +22,8 @@ function BoardRoutes (app, express) {
 				});
 		})
 		.post(function (req, res) {
-			var owner = req.body.owner,
-				title = req.body.title,
-				sections = req.body.sections;
 
-			dbInterface.getFromDb('Board', { owner: owner, title: title })
+			dbInterface.getFromDb('Board', { owner: req.body.owner, title: req.body.title })
 				.exec(function (err, boards) {
 					if (err)
 						return res.send(err);
@@ -40,6 +38,9 @@ function BoardRoutes (app, express) {
 							.addBack(function (err) {
 								if (err)
 									return res.send(err);
+
+								//var mailer = require('../mailer/index.js');
+								//mailer.sendEmail();
 
 								res.json({
 									success: true,

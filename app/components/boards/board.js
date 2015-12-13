@@ -4,16 +4,16 @@ var mongoose = require('mongoose'),
 var BoardSchema = new mongoose.Schema({
 	owner: { type: String, required: true },
 	title: { type: String, required: true },
-	collaborators: [],
+	collaborators: [String],
 
 	columns: [
 		{
-			title: String,
+			title: { type: String, required: true },
 			tasks:
 			[
 				{
 					title: String,
-					content: [String]
+					content: []
 				}
 			]
 		}

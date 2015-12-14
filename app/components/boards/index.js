@@ -39,9 +39,6 @@ function BoardRoutes (app, express) {
 								if (err)
 									return res.send(err);
 
-								//var mailer = require('../mailer/index.js');
-								//mailer.sendEmail();
-
 								res.json({
 									success: true,
 									message: 'Board successfully created'

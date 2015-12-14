@@ -22,8 +22,13 @@
 			  .then(function(res) {
               
               console.log(res.data);
-              $state.go('app.board')
-              sessionStorage.setItem('token',res.data.token)
+
+              if(res.data.token){
+              	$state.go('app.board')
+				sessionStorage.setItem('token',res.data.token)	
+              }
+
+              
 
             }, function(err) {
               //toastr.error('Failed: ' + err.data);

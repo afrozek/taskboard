@@ -32,6 +32,8 @@
 				//controllerAs: 'board'
 			})
 
+			
+
 		$urlRouterProvider.otherwise('landing');
 	}
 }());

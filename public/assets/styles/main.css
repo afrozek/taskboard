@@ -92,6 +92,8 @@ h1,h2,h3,h4{
 
 /*content*/
 
+
+
 .sideMenu {
 	position: fixed;
 	z-index: 99;
@@ -100,23 +102,21 @@ h1,h2,h3,h4{
 	border-right: 2px solid #b1fc12;
 	box-shadow: 0px 0px 20px 2px black;
 	width: 300px;
-	left: -280px;
+	left: -300px;
+	top: 66px;
 	overflow: scroll;
 	transition: .3s;
 }
 
 .sideMenuNavIcon{
-	left: 20px !important;
+	left: 0px !important;
+    z-index: 99;
+    width: auto;
+    margin: 0;
+    padding: 25px;
 }
 
-.menuHeading, .menuHeading .itemHeading {
-	border: none !important;
-	padding: 0 !important;
-	padding-top: 10px !important;
-	min-height: 0 !important;
-	/* position: relative !important; */
-	/* z-index: 99; */
-}
+
 
 .joinUs {
 	cursor: pointer;
@@ -297,25 +297,27 @@ h1,h2,h3,h4{
 }
 
 /*bootsnip stuff*/
-@import url(http://fonts.googleapis.com/css?family=Roboto);
+
 
 /****** LOGIN MODAL ******/
 .loginmodal-container {
   padding: 30px;
-  max-width: 350px;
+  max-width: 450px;
   width: 100% !important;
   background-color: #F7F7F7;
   margin: 0 auto;
   border-radius: 2px;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
   overflow: hidden;
-  font-family: roboto;
 }
 
 .loginmodal-container h1 {
   text-align: center;
-  font-size: 1.8em;
-  font-family: roboto;
+  font-size: 2.8em;
+  color: #409BFC;
+  text-transform: uppercase;
+  padding: 0px;
+  margin: 0px;
 }
 
 .loginmodal-container input[type=submit] {
@@ -323,6 +325,8 @@ h1,h2,h3,h4{
   display: block;
   margin-bottom: 10px;
   position: relative;
+  background: #409BFC;
+  box-shadow: inset 0px 0px 42px -12px black;
 }
 
 .loginmodal-container input[type=text], input[type=password] {
@@ -348,6 +352,18 @@ h1,h2,h3,h4{
   box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
 }
 
+
+.loginmodal-container form{
+	max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.loginmodal-container input{
+	border-radius: 5px;
+	font-size: 22px !important;
+}
+
 .loginmodal {
   text-align: center;
   font-size: 14px;
@@ -360,15 +376,18 @@ h1,h2,h3,h4{
   user-select: none; */
 }
 
+
+
 .loginmodal-submit {
   /* border: 1px solid #3079ed; */
   border: 0px;
   color: #fff;
-  text-shadow: 0 1px rgba(0,0,0,0.1); 
+  text-shadow: 0 1px rgba(0,0,0,0.1);
   background-color: #4d90fe;
-  padding: 17px 0px;
-  font-family: roboto;
-  font-size: 14px;
+  padding: 6px 0px;
+  text-transform: uppercase;
+  font-size: 18px;
+  letter-spacing: 3px;
   /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#4787ed)); */
 }
 
@@ -389,6 +408,7 @@ h1,h2,h3,h4{
   opacity: 0.6;
   transition: opacity ease 0.5s;
 } 
+
 
 .login-help{
   font-size: 12px;

@@ -1,0 +1,25 @@
+
+<!-- sidemenu -->
+<ng-include src="'js/includes/sidemenu.html'"></ng-include>
+
+<!-- nav -->
+<div class="container-fluid fixed fullWidth clearPadding navsContainer">
+	<span class="glyphicon glyphicon-menu-hamburger menuIcon sideMenuNavIcon col-xs-2" aria-hidden="true" ng-click="navStatus = !navStatus"></span>
+	<div class="container-fluid navContainer blackGradient ">
+		<div class="container">
+			<h1 class="title"> - taskboard - </h1>
+		</div>
+	</div>
+	<div class="container-fluid subNavContainer">
+		<div class="text-center">
+			<span data-toggle="modal" class="joinUs" data-target="#loginModal">
+				LOGIN
+			</span> 
+			| <span data-toggle="modal" class="joinUs" data-target="#signupModal">SIGNUP
+			</span>
+		</div>
+	</div>
+</div>
+
+<!-- nested view -->
+<div ui-view></div>

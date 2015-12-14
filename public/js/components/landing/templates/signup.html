@@ -2,11 +2,64 @@
  <!--  <div class="modal-dialog" role="document"> -->
     <div class="loginmodal-container blackGradient">
       <h1>Sign Up</h1><br>
-      <form>
-        <input type="text" ng-model="formData.email" placeholder="Username">
-        <input type="password" ng-model="formData.password" placeholder="Password">
-        <input type="submit" class="login loginmodal-submit" value="Signup" ng-click="signup()">
-      </form>
+      <form name="registerForm" ng-submit="register.submitForm(registerForm.$valid)" role="form" novalidate>
+
+      <p>{{register.submitStatus}}</p>       
+      <div class="row">
+  
+<!--         <div class="col-xs-12 ">
+          <div class="form-group">
+              <input type="text" name="firstName" ng-model="register.form.firstName" id="firstName" class="form-control input-lg" placeholder="First Name" tabindex="1">
+          </div>
+        </div>
+        
+        <div class="col-xs-12 ">
+          <div class="form-group">
+            <input type="text" name="lastName" ng-model="register.form.lastName" id="lastName" class="form-control input-lg" placeholder="Last Name" tabindex="2">
+          </div>
+        </div>
+      </div>
+ -->
+       <!-- email -->
+      <div class="form-group">
+        <input type="email" name="email" ng-model="register.form.email" id="email" class="form-control input-lg" placeholder="Email Address" tabindex="4" required>
+        <p ng-show="registerForm.email.$invalid && !registerForm.email.$pristine" class="help-block">You email is required.</p>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12 ">
+
+          <!-- password -->
+          <div class="form-group">
+            <input type="password" name="password" ng-model="register.form.password" id="password" class="form-control input-lg" placeholder="Password" tabindex="5" ng-minlength="3" ng-maxlength="8" required>
+            <p ng-show="registerForm.password.$error.minlength" class="help-block">Password is too short.</p>
+              <p ng-show="registerForm.password.$error.maxlength" class="help-block">Password is too long.</p>
+          </div>
+
+          <!-- password -->
+          <div class="form-group">
+            <input type="password" name="confirmPassword" ng-model="register.form.confirmPassword" id="confirmPassword" class="form-control input-lg" placeholder="Confirm Password" tabindex="5" ng-minlength="3" ng-maxlength="8" required>
+            <p ng-show="registerForm.confirmPassword.$error.minlength" class="help-block">Password is too short.</p>
+              <p ng-show="registerForm.confirmPassword.$error.maxlength" class="help-block">Password is too long.</p>
+          </div>
+
+        </div>
+
+
+        
+      </div>
+      
+      
+      
+      <div class="row">
+        <div class="col-xs-12 ">
+
+          <!-- submit -->
+          <input type="submit" ng-disabled="registerForm.$invalid"  value="Register" class="btn btn-primary btn-block btn-lg" tabindex="7">
+        </div>
+        
+      </div>
+    </form>
     </div>
  <!--  </div> -->
 </div>

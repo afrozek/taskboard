@@ -4,20 +4,9 @@ var mongoose = require('mongoose'),
 var BoardSchema = new mongoose.Schema({
 	owner: { type: String, required: true },
 	title: { type: String, required: true },
-	collaborators: [String],
+	collaborators: [],
 
-	columns: [
-		{
-			title: { type: String, required: true },
-			tasks:
-			[
-				{
-					title: String,
-					content: []
-				}
-			]
-		}
-	]
+	columns: []
 });
 
 module.exports = mongoose.model('Board', BoardSchema);

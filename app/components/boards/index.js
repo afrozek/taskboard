@@ -36,8 +36,9 @@ function BoardRoutes (app, express) {
 					} else {
 						dbInterface.postToDb('Board', req.body)
 							.addBack(function (err) {
-								if (err)
+								if (err) {
 									return res.send(err);
+								}
 
 								res.json({
 									success: true,

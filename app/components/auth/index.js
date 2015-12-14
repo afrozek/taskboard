@@ -20,7 +20,7 @@ function authRoutes (app, express) {
 					} else {
 						var payload = {	email: user.email };
 						var secret = require('../../../config.js').secret;
-						var options = { expiresInMinutes: 1440 };
+						var options = { expiresIn: 86400 };
 
 						var token = jwt.sign(payload, secret, options);
 

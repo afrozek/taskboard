@@ -1,6 +1,6 @@
 var models = {
 	User: require('../users/user.js'),
-	Todo: require('../todoList/todoModel.js')
+	Board: require('../boards/board.js')
 };
 
 module.exports = models;

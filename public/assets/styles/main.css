@@ -87,7 +87,8 @@ h1,h2,h3,h4{
 
 /*content*/
 
-.sideMenu{
+.sideMenu {
+	display: none;
 	position: fixed;
 	z-index: 99;
 	!top: 102px;
@@ -98,13 +99,21 @@ h1,h2,h3,h4{
 	overflow: scroll;
 }
 
-.menuHeading, .menuHeading .itemHeading{
+.menuHeading, .menuHeading .itemHeading {
 	border: none !important;
 	padding: 0 !important;
 	padding-top: 10px !important;
 	min-height: 0 !important;
 	/* position: relative !important; */
 	/* z-index: 99; */
+}
+
+.joinUs {
+	cursor: pointer;
+}
+
+.joinUs:hover {
+	opacity: .7;
 }
 
 .menuItem{

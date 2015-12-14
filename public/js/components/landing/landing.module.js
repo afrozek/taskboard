@@ -2,8 +2,12 @@ angular
 	.module('landing', [])
 	.controller('landingCtrl', landingCtrl);
 
-	landingCtrl.$inject = [];
+	landingCtrl.$inject = ['$scope'];
 
-function landingCtrl () {
-	
+function landingCtrl ($scope) {
+	$scope.loginModal = loginModal;
+
+	function loginModal () {
+
+	}
 }

@@ -1,5 +1,6 @@
-
-<div class="container  sideMenu blackGradient clearPadding">
+<ng-include src="'js/components/landing/templates/login.html'"></ng-include>
+<ng-include src="'js/components/landing/templates/signup.html'"></ng-include>
+<div class="container sideMenu blackGradient clearPadding">
 	<!-- <ul>
 		<li>board</li>
 		<li>board</li>
@@ -165,7 +166,11 @@
 	</div>
 	<div class="container-fluid subNavContainer">
 		<div class="text-center">
-			LOGIN | SIGNUP
+			<span data-toggle="modal" class="joinUs" data-target="#loginModal">
+				LOGIN
+			</span> 
+			| <span data-toggle="modal" class="joinUs" data-target="#signupModal">SIGNUP
+			</span>
 		</div>
 	</div>
 </div>

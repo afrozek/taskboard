@@ -1,11 +1,11 @@
 <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="loginmodal-container">
-      <h1>Login</h1><br>
+      <h1>Login {{ formData }}</h1><br>
       <form>
-        <input type="text" name="user" placeholder="Username">
-        <input type="password" name="pass" placeholder="Password">
-        <input type="submit" name="login" class="login loginmodal-submit" value="Login">
+        <input type="text" ng-model="formData.email" placeholder="Username">
+        <input type="password" ng-model="formData.password" placeholder="Password">
+        <input type="submit" ng-model="formData.login" class="login loginmodal-submit" value="Login" ng-click="login()">
       </form>
     </div>
   </div>

@@ -2,12 +2,27 @@ angular
 	.module('landing', [])
 	.controller('landingCtrl', landingCtrl);
 
-	landingCtrl.$inject = ['$scope'];
+	landingCtrl.$inject = ['$scope', 'usersFactory'];
 
-function landingCtrl ($scope) {
-	$scope.loginModal = loginModal;
+function landingCtrl ($scope, usersFactory) {
+	$scope.login = login;
+	$scope.signup = signup;
 
-	function loginModal () {
+	$scope.formData = {};
 
+	function login () {
+		console.log('logging in');
+		usersFactory.signupOrLogin($scope.formData, true)
+			.then(function (res) {
+				console.log(res);
+			});
+	}
+
+	function signup () {
+		console.log('signing up');
+		usersFactory.signupOrLogin($scope.formData)
+			.then(function (res) {
+				console.log(res);
+			});
 	}
 }

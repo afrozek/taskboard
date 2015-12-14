@@ -29,6 +29,18 @@ body{
 	float: right;
 }
 
+.fixed{
+	position: fixed !important;
+}
+
+.fullWidth{
+	width: 100%;
+}
+
+.hasHeader{
+	padding-top: 100px;
+}
+
 h1,h2,h3,h4{
 	margin: 20px;
 }
@@ -41,6 +53,17 @@ h1,h2,h3,h4{
 	text-align: center;
 }
 
+.zIndexPriority{
+	z-index: 99;
+}
+
+.topMargin{
+	margin-bottom: 5px;
+}
+
+.bottomMargin{
+	margin-top: 5px;
+}
 .blackGradient{
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#4c4c4c+0,474747+25,2c2c2c+72 */
 	background: rgb(76,76,76); /* Old browsers */
@@ -64,17 +87,84 @@ h1,h2,h3,h4{
 
 /*content*/
 
+.sideMenu{
+	position: fixed;
+	z-index: 99;
+	!top: 102px;
+	height: 100%;
+	border-right: 2px solid #b1fc12;
+	box-shadow: 0px 0px 20px 2px black;
+	width: 300px;
+	overflow: scroll;
+}
+
+.menuHeading, .menuHeading .itemHeading{
+	border: none !important;
+	padding: 0 !important;
+	padding-top: 10px !important;
+	min-height: 0 !important;
+	/* position: relative !important; */
+	/* z-index: 99; */
+}
+
+.menuItem{
+	position: relative;
+    /* border-bottom: 1px solid gray; */
+    box-shadow: 0px -3px 20px -5px black;
+    min-height: 70px;
+    padding: 20px 10px 20px 10px;
+    overflow: auto;
+}
+
+.itemHeading{
+	overflow: auto;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #313131;
+    margin-bottom: 20px;
+}
+
+.itemHeading h3{
+	color: #b1fc12;
+	font-size: 18px;
+	font-weight: 100;
+}
+
+.menuItem h3{
+	padding: 0;
+	margin: 0;
+	text-align: center;
+}
+
+.menuIcon{
+	
+    position: relative;
+    color: #b1fc12;
+    font-size: 15px;
+
+
+}
+
+
+.navsContainer{
+	z-index: 98;
+}
+
 .navContainer{
 	/*background: black;*/
 	padding: 0;
 	box-shadow: 0px 0px 20px 2px black;
     position: relative;
+    width: 100%;
+
 }
 
 .subNavContainer{
 	background: #c2ef6d;
 	box-shadow: 0px 0px 20px 2px black;
 	padding: 8px;
+	position: relative;
+	width: 100%;
+
 }
 
 .title{
@@ -134,6 +224,7 @@ h1,h2,h3,h4{
 .taskContainer{
 	margin-bottom: 10px;
 	position: relative;
+	z-index: 96;
 }
 
 .taskHeader{

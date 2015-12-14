@@ -1,6 +1,7 @@
 <ng-include src="'js/components/landing/templates/login.html'"></ng-include>
 <ng-include src="'js/components/landing/templates/signup.html'"></ng-include>
-<div class="container sideMenu blackGradient clearPadding">
+
+<div class="container sideMenu blackGradient clearPadding" ng-click="navStatus = !navStatus" ng-class="{show: navStatus == true}">
 	<!-- <ul>
 		<li>board</li>
 		<li>board</li>
@@ -89,8 +90,8 @@
 	<div class="menuItem">
 		<div class=" clearPadding">
 			<div class="itemHeading">
-				<h3 class="col-xs-10">Manage Boards</h3>
-				<span class="glyphicon glyphicon-tasks menuIcon col-xs-2" aria-hidden="true"></span>
+				<h3 class="col-xs-10">Manage Users</h3>
+				<span class="glyphicon glyphicon-user menuIcon col-xs-2" aria-hidden="true"></span>
 			</div>
 			<div class="manageInputs col-lg-12 ">
 				

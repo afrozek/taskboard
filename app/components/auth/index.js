@@ -12,6 +12,7 @@ function authRoutes (app, express) {
 				if (err)
 					return res.send(err);
 
+				//if found user with email
 				if (user) {
 					if (!user.comparePassword(req.body.password)) {
 						return res.status(403).send({
@@ -26,6 +27,12 @@ function authRoutes (app, express) {
 
 						res.json({ token: token });
 					}
+				}
+				else{
+					//if email does note exist
+					return res.status(403).send({
+							message: 'A user with that email does not exist.'
+						});
 				}
 			});
 	});

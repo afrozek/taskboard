@@ -9,12 +9,16 @@
 		var usersApi = '/api/users';
 
 		var factory = {
-			loginUser: loginUser,
+			signupOrLogin: signupOrLogin,
 			getUsers: getUsers
 		};
 
-		function loginUser (loginData) {
-			return $http.post('/api/auth', loginData);
+		function signupOrLogin (loginData, login) {
+			if (login) {
+				usersApi = '/api/auth';
+			}
+
+			return $http.post(usersApi, loginData);
 		}
 
 		function getUsers () {

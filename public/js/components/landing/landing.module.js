@@ -11,18 +11,26 @@ function landingCtrl ($scope, usersFactory) {
 	$scope.formData = {};
 
 	function login () {
-		console.log('logging in');
-		usersFactory.signupOrLogin($scope.formData, true)
-			.then(function (res) {
-				console.log(res);
-			});
+		console.log('signing up');
+		usersFactory.login($scope.formData)
+			// .then(function (res) {
+			// 	console.log(res);
+			// });
 	}
 
 	function signup () {
 		console.log('signing up');
-		usersFactory.signupOrLogin($scope.formData)
-			.then(function (res) {
-				console.log(res);
-			});
+		usersFactory.signup($scope.formData)
+			// .then(function (res) {
+			// 	console.log(res);
+			// });
 	}
+
+		// function login () {
+	// 	console.log('logging in');
+	// 	usersFactory.signupOrLogin($scope.formData, true)
+	// 		.then(function (res) {
+	// 			console.log(res);
+	// 		});
+	// }
 }

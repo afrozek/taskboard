@@ -25,7 +25,11 @@ function authRoutes (app, express) {
 
 						var token = jwt.sign(payload, secret, options);
 
-						res.json({ token: token });
+						res.json(
+							{
+								message: "Authenticated! Keep this token in a safe place",
+								token: token 
+							});
 					}
 				}
 				else{

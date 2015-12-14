@@ -13,12 +13,25 @@
 				templateUrl: 'test.html'
 			})
 
-			.state('landing', {
+			.state('app', {
 				url: '/',
-				templateUrl: 'js/components/landing',
-				controller: 'landingCtrl'
+				templateUrl: 'js/app.home.html',
 			})
 
-		$urlRouterProvider.otherwise('/');
+			.state('app.landing', {
+				url: 'landing',
+				templateUrl: 'js/components/landing/landing.html',
+				controller: 'landingCtrl'
+				//controllerAs: 'landing'
+			})
+
+			.state('app.board', {
+				url: 'board',
+				templateUrl: 'js/components/board/board.html'
+				//controller: 'boardCtrl',
+				//controllerAs: 'board'
+			})
+
+		$urlRouterProvider.otherwise('landing');
 	}
 }());

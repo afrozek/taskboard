@@ -29,7 +29,7 @@
 	    vm.addColumn = function (columnTitle) {
 	    	if (columnTitle){
 
-			    	vm.board.columns.push({title: columnTitle, content:["sampletask"]});
+			    	vm.board.columns.push({title: columnTitle, cards:[] });
 			    	
 			    	boardService.updateBoard(vm.boardId,vm.board)
 			    	.then(function(res){

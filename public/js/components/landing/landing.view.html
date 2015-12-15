@@ -1,12 +1,21 @@
 <ng-include src="'js/components/landing/templates/login.html'"></ng-include>
 <ng-include src="'js/components/landing/templates/signup.html'"></ng-include>
 
-    <div class="loginmodal-container blackGradient">
-      <h1>Login</h1><br>
-      <form>
-        <input type="text" ng-model="formData.email" placeholder="Username">
-        <input type="password" ng-model="formData.password" placeholder="Password">
-        <input type="submit" class="login loginmodal-submit" value="Login" ng-click="login()">
-      </form>
-    </div>
+   <div class="container hasHeader landing">
+   		<div class="container col-xs-6">
+   			<h1>Welcome to Taskboard</h1>
+   			<h2>The simple task manager</h2>
+   			<img class="landingPic" src="../assets/images/landingPic.png">
+   		</div>
+   		<div class="container col-xs-6">
+   			 <div class="loginmodal-container blackGradient">
+		      <h1>Login</h1><br>
+		      <form>
+		        <input type="text" ng-model="formData.email" placeholder="Username">
+		        <input type="password" ng-model="formData.password" placeholder="Password">
+		        <input type="submit" class="login loginmodal-submit" value="Login" ng-click="login()">
+		      </form>
+		    </div>
+   		</div>
 
+   </div>

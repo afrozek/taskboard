@@ -79,7 +79,10 @@
 	    	});
 	    }
 
+
+
 	    vm.moveCardRight = function (columnIndex, cardIndex) {
+	    	//copy card data to var
 	    	var currentCardData = vm.board.columns[columnIndex].cards[cardIndex];
 	    	var currentColumnIndex = columnIndex;
 	    	var currentCardIndex = cardIndex;
@@ -90,12 +93,47 @@
 	    	console.log("current card index: " + currentCardIndex );
 	    	console.log("next column index: " + nextColumnIndex);
 
+	    	//push to other column
 	    	vm.board.columns[nextColumnIndex].cards.push(currentCardData);
+
+	    	//remove from current colum
+	    	vm.board.columns[currentColumnIndex].cards.splice(currentCardIndex,1);
+
+	    	boardService.updateBoard(vm.boardId,vm.board).then(function(res){
+	    		//console.log(res.data)
+	    		 vm.boardInit();	
+	    	});
 	    }
 
-	    vm.moveCardLeft = function () {
 
+	    vm.moveCardLeft = function (columnIndex, cardIndex) {
+	    	//copy card data to var
+	    	var currentCardData = vm.board.columns[columnIndex].cards[cardIndex];
+	    	var currentColumnIndex = columnIndex;
+	    	var currentCardIndex = cardIndex;
+
+	    	var nextColumnIndex = currentColumnIndex - 1;
+	    	
+	    	console.log("current column index: " + currentColumnIndex );
+	    	console.log("current card index: " + currentCardIndex );
+	    	console.log("next column index: " + nextColumnIndex);
+
+	    	//push to other column
+	    	vm.board.columns[nextColumnIndex].cards.push(currentCardData);
+
+	    	//remove from current colum
+	    	vm.board.columns[currentColumnIndex].cards.splice(currentCardIndex,1);
+
+	    	boardService.updateBoard(vm.boardId,vm.board).then(function(res){
+	    		//console.log(res.data)
+	    		 vm.boardInit();	
+	    	});
 	    }
+
+
+
+
+	    
 
 
 

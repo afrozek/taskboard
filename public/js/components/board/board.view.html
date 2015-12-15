@@ -3,7 +3,11 @@
 	<div class="container board">
 		<div class="row outline boardHeader blackGradient">
 			<h2 class="boardTitle">{{board.board.title}}</h2>
-			<button ng-if="board.board.columns.length == 0 || board.board.columns.length < 4" class="floatRight">add column</button>
+			
+			<div class="floatRight">
+				<input ng-model="board.columnTitle"  type="text">
+				<button ng-if="board.board.columns.length == 0 || board.board.columns.length < 4"  ng-click="board.addColumn(board.columnTitle)"> add column</button>
+							</div>
 		</div>
 
 		
@@ -11,12 +15,15 @@
 
 		<!-- column -->
 			<div class="sectionContainer col-md-3 clearPadding outline" ng-repeat="column in board.board.columns">
+
 				<div class="sectionHeader">
-					<h2 class="sectionTitle silverGradient clearMargin centerText" >Title:{{column.title}}</h2>
-
-
+					<h2 class="sectionTitle silverGradient clearMargin centerText" >{{column.title}}</h2>
 				</div>
+
 				<div class="sectionBody">
+					
+					<input type="text" ng-model="board.newCardName" class="fullWidth" placeholder="Enter Task Title">
+					<button class="fullWidth bottomMargin" ng-click="board.addCard($index, board.newCardName)">Add Task</button>
 
 					<div class="taskContainer" ng-repeat="card in column.cards">
 						<div class="taskHeader">

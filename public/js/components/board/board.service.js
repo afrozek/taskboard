@@ -12,9 +12,11 @@
 
     		getBoards: getBoards,
             getBoard: getBoard,
-            updateBoard: updateBoard,
+            getBoardId: getBoardId,
             setBoardId: setBoardId,
+            updateBoard: updateBoard,
             createNewBoard: createNewBoard,
+
     		info: info
     	};
 
@@ -50,6 +52,10 @@
             } 
             else return $http.get("http://localhost:8080/api/boards/" + boardId );
              
+        }
+
+         function getBoardId(){
+            return sessionStorage.getItem('boardId'); 
         }
 
         //gets board id from session storage and sends request, returns a promise

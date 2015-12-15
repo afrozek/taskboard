@@ -62,11 +62,11 @@ h1,h2,h3,h4{
 }
 
 .topMargin{
-	margin-bottom: 5px;
+	margin-top: 5px;
 }
 
 .bottomMargin{
-	margin-top: 5px;
+	margin-bottom: 5px;
 }
 
 .show{

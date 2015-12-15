@@ -1,6 +1,6 @@
 (function () {
 	angular
-	    .module('app', ['landing', 'ui.router'])
+	    .module('app', [ 'ui.router','landing','sample','board'])
 	    .config(routeConfig);
 
 	routeConfig.$inject = ['$locationProvider', '$urlRouterProvider', '$stateProvider'];
@@ -20,16 +20,16 @@
 
 			.state('app.landing', {
 				url: 'landing',
-				templateUrl: 'js/components/landing/landing.html',
+				templateUrl: 'js/components/landing/landing.view.html',
 				controller: 'landingCtrl'
 				//controllerAs: 'landing'
 			})
 
 			.state('app.board', {
 				url: 'board',
-				templateUrl: 'js/components/board/board.html'
-				//controller: 'boardCtrl',
-				//controllerAs: 'board'
+				templateUrl: 'js/components/board/board.view.html',
+				controller: 'boardCtrl',
+				controllerAs: 'board'
 			})
 
 			

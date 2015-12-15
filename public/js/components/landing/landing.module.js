@@ -2,11 +2,13 @@ angular
 	.module('landing', [])
 	.controller('landingCtrl', landingCtrl);
 
-	landingCtrl.$inject = ['$scope', 'usersFactory'];
+	landingCtrl.$inject = ['$scope', 'usersFactory','sampleService'];
 
-function landingCtrl ($scope, usersFactory) {
+function landingCtrl ($scope, usersFactory, sampleService) {
 	$scope.login = login;
 	$scope.signup = signup;
+
+	sampleService.info();
 
 	$scope.formData = {};
 

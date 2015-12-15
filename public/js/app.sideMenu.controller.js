@@ -8,7 +8,17 @@ function sideMenuCtrl ($scope, authService, profileService, boardService, $http,
 
 	vm = this;
 
-	vm.boards = boards(); //populates list of boards in sidemenu
+	vm.boardsList = boardsList(); //populates list of boards in sidemenu
+	
+	vm.addBoard = function (boardName) {
+		boardService.createNewBoard(boardName).then(function(res){
+			boardsList();
+			console.log(res.data);
+			console.log(boardName);
+			vm.boardName = "";
+		});
+
+	}
 
 	vm.displayBoard = function (boardId) {
 		console.log("clicked");
@@ -26,7 +36,7 @@ function sideMenuCtrl ($scope, authService, profileService, boardService, $http,
 	/////////////////
 
 	//populates list of boards in sidemenu
-	function boards () {
+	function boardsList () {
 		//get email
 		var email = profileService.getEmail();
 

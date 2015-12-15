@@ -22,9 +22,9 @@
 			  </div><!-- /.col-lg-12 -->
 			  <div class="col-lg-12">
 			    <div class="input-group">
-			      <input type="text" class="form-control" placeholder="New Board">
+			      <input type="text" class="form-control" ng-model="menu.boardName" placeholder="New Board">
 			      <span class="input-group-btn">
-			        <button class="btn btn-success" type="button">Add</button>
+			        <button class="btn btn-success" type="button" ng-click="menu.addBoard(menu.boardName)">Add</button>
 			      </span>
 			    </div><!-- /input-group -->
 			  </div><!-- /.col-lg-12 -->

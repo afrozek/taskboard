@@ -14,6 +14,7 @@
             getBoard: getBoard,
             updateBoard: updateBoard,
             setBoardId: setBoardId,
+            createNewBoard: createNewBoard,
     		info: info
     	};
 
@@ -48,6 +49,17 @@
                console.log("no board selected"); 
             } 
             else return $http.get("http://localhost:8080/api/boards/" + boardId );
+             
+        }
+
+        //gets board id from session storage and sends request, returns a promise
+        function createNewBoard(boardName){
+            var email = sessionStorage.getItem('email');
+            
+            if(typeof(boardName) == "null" || typeof(boardName) == "undefined" ){
+               console.log("no board name selected"); 
+            } 
+            else return $http.post("http://localhost:8080/api/boards/",{owner: email, title: boardName});
              
         }
 

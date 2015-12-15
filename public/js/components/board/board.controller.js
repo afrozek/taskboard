@@ -18,6 +18,7 @@
 		    	vm.board = res.data;
 
 		    	//console.log(vm.board);
+		    	//vm.board.columns[0].cards[0].content.push("cats");
 		    });
 
 
@@ -28,12 +29,13 @@
 	    //add column
 	    vm.addColumn = function (columnTitle) {
 	    	if (columnTitle){
-	    		
+
 			    	vm.board.columns.push({title: columnTitle, content:["sampletask"]});
 			    	
 			    	boardService.updateBoard(vm.boardId,vm.board)
 			    	.then(function(res){
 			    		console.log(res.data)
+			    		vm.boardInit();	
 		    		});
 		    }
 		    //if input field empty
@@ -45,29 +47,31 @@
 
 
 
-
-
-
 		//add card
 	    vm.addCard = function (index,cardTitle) {
 
 	    	//check if cards array exists
 	    	if (vm.board.columns[index].cards == undefined){
 	    		//if it doesnt, make a new array with first card
-		    		vm.board.columns[index].cards = [{title: cardTitle}]
+		    		vm.board.columns[index].cards = [{title: cardTitle, content:[]}]
 		    	}
 
 		    	//else just push a new card with title
 	    	else {  
-	    		vm.board.columns[index].cards.push({title: cardTitle})
+	    		vm.board.columns[index].cards.push({title: cardTitle, content:[]})
 	    	}
 	    	console.log("adding card");
 	    	console.log(vm.board)
 
 	    	boardService.updateBoard(vm.boardId,vm.board).then(function(res){
-	    		console.log(res.data)
+	    		//console.log(res.data)
+	    		 vm.boardInit();	
 	    	});
-	    	// vm.boardInit();	
+	    	
+	    }
+
+	    vm.addCardBullet = function (columnIndex,cardIndex,bulletString) {
+	     	vm.board.columns[0].cards[0].content.push("dogs");
 	    }
 
 

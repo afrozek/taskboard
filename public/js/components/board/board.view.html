@@ -14,7 +14,7 @@
 		<div class="row outline sectionsContainer" >
 
 		<!-- column -->
-			<div class="sectionContainer col-md-3 clearPadding outline" ng-repeat="column in board.board.columns">
+			<div class="sectionContainer col-md-3 clearPadding outline" ng-repeat="column in board.board.columns track by $index">
 
 				<div class="sectionHeader">
 					<h2 class="sectionTitle silverGradient clearMargin centerText" >{{column.title}}</h2>
@@ -22,18 +22,23 @@
 
 				<div class="sectionBody">
 					
+					<!-- add task input -->
 					<input type="text" ng-model="board.newCardName" class="fullWidth" placeholder="Enter Task Title">
 					<button class="fullWidth bottomMargin" ng-click="board.addCard($index, board.newCardName)">Add Task</button>
 
-					<div class="taskContainer" ng-repeat="card in column.cards">
+					<div class="taskContainer" ng-repeat="card in column.cards track by $index">
 						<div class="taskHeader">
 							<h3 class="taskTitle silverGradient clearMargin centerText">
 								{{card.title}}
 							</h3>
 						</div>
 						<div class="taskBody">
+							<!-- add card bullet -->
+							<input type="text" ng-model="board.newCardBullet" class="fullWidth" placeholder="Enter Task Title">
+							<button class="fullWidth bottomMargin" ng-click="board.addCardBullet($index, board.newCardBullet)">Add Task</button>
+
 							<ul>
-								<li ng-repeat="bullet in card.content">{{bullet}}</li>
+								<li ng-repeat="bullet in card.content track by $index">{{bullet}}</li>
 							</ul>
 						</div>
 						<div class="taskFooter">

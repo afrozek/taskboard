@@ -66,6 +66,7 @@ h1,h2,h3,h4{
 }
 
 .show{
+	display: block;
 	left: 0px !important;
 	transition: .3s;
 }
@@ -103,6 +104,7 @@ h1,h2,h3,h4{
 	box-shadow: 0px 0px 20px 2px black;
 	width: 300px;
 	left: -300px;
+	display: none;
 	top: 66px;
 	overflow: scroll;
 	transition: .3s;
@@ -419,4 +421,54 @@ h1,h2,h3,h4{
 .help-block{
 	color: red;
 	font-size: 14px;
+}
+
+
+
+
+
+
+
+
+/*transitions*/
+.ui-view-container {
+  position: relative;
+}
+
+[ui-view].ng-enter, [ui-view].ng-leave {
+  position: absolute;
+  left: 0;
+  right: 0;
+  -webkit-transition:all .5s ease-in-out;
+    -moz-transition:all .5s ease-in-out;
+    -o-transition:all .5s ease-in-out;
+    transition:all .5s ease-in-out;
+}
+
+[ui-view].ng-enter {
+  opacity: 0;
+  -webkit-transform:scale3d(0.5, 0.5, 0.5);
+  -moz-transform:scale3d(0.5, 0.5, 0.5);
+  transform:scale3d(0.5, 0.5, 0.5);
+}
+
+[ui-view].ng-enter-active {
+  opacity: 1;
+  -webkit-transform:scale3d(1, 1, 1);
+  -moz-transform:scale3d(1, 1, 1);
+  transform:scale3d(1, 1, 1);
+}
+
+[ui-view].ng-leave {
+  opacity: 1; 
+  -webkit-transform:translate3d(0, 0, 0);
+  -moz-transform:translate3d(0, 0, 0);
+  transform:translate3d(0, 0, 0);
+}
+
+[ui-view].ng-leave-active {
+  opacity: 0;
+  -webkit-transform:translate3d(100px, 0, 0);
+  -moz-transform:translate3d(100px, 0, 0);
+  transform:translate3d(100px, 0, 0);
 }

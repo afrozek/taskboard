@@ -80,7 +80,7 @@
 	    }
 
 	    vm.moveCardRight = function (columnIndex, cardIndex) {
-	    	//var currentColumn = vm.board.columns[columnIndex];
+	    	var currentCardData = vm.board.columns[columnIndex].cards[cardIndex];
 	    	var currentColumnIndex = columnIndex;
 	    	var currentCardIndex = cardIndex;
 
@@ -90,7 +90,7 @@
 	    	console.log("current card index: " + currentCardIndex );
 	    	console.log("next column index: " + nextColumnIndex);
 
-	    	vm.board.columns[nextColumnIndex].cards.push({title:"moving",content:['moving content','moving..']})
+	    	vm.board.columns[nextColumnIndex].cards.push(currentCardData);
 	    }
 
 	    vm.moveCardLeft = function () {

@@ -26,7 +26,7 @@
               if(res.data.token){
               	profileService.setEmail(form.email)
               	profileService.setToken(res.data.token)
-              	$state.go('app.board')
+              	$state.go('app.board',null,{ reload: true })
 					
               }
 

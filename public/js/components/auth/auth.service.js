@@ -35,7 +35,7 @@
           if(isLogged){
             console.log("logging out")
             profileService.clearProfile();
-            $state.go('app.landing')
+            $state.go('app.landing',null,{ reload: true })
 
           }
         }

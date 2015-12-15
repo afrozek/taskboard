@@ -5,12 +5,13 @@
 		.module('board')
 		.controller('boardCtrl', boardCtrl)
 
-	boardCtrl.inject = ['boardService']
+	boardCtrl.inject = ['boardService','profileService']
 
-	function boardCtrl(boardService) {
+	function boardCtrl(boardService,profileService) {
 
 	    var vm = this;
-	    //boardInit();
+	    boardInit();
+	    profileService.info();
 
 	    vm.boardInit = boardInit;
 	    // vm.refresh = refresh;
@@ -19,6 +20,7 @@
 	    // vm.title = 'board';
 
 	    ////////////
+
 
 	    function boardInit() {
 	      /* */

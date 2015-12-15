@@ -2,9 +2,9 @@ angular
 	.module('app')
 	.controller('sideMenuCtrl', sideMenuCtrl)
 
-	sideMenuCtrl.$inject = ['$scope','authService','profileService','boardService','$http','$state'];
+	sideMenuCtrl.$inject = ['$scope','authService','profileService','boardService','$http','$state', '$http'];
 
-function sideMenuCtrl ($scope, authService, profileService, boardService, $http, $state) {
+function sideMenuCtrl ($scope, authService, profileService, boardService, $http, $state, $http) {
 
 	vm = this;
 
@@ -33,7 +33,19 @@ function sideMenuCtrl ($scope, authService, profileService, boardService, $http,
 	    });
 
 	vm.inviteUser = function () {
-		
+		boardService.getBoard()
+			.then(function (res) {
+				vm.currentBoard = res.data;
+				vm.currentBoard.collaborators.push($scope.userToInvite);
+
+				boardService.updateBoard(vm.currentBoard._id, vm.currentBoard)
+					.then(function (res) {
+						vm.collaborators = boardService.getBoard()
+							.then(function (res) {
+						    	vm.collaborators = res.data.collaborators;
+						    });
+					});
+			});
 	};
 
 

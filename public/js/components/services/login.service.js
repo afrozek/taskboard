@@ -26,6 +26,7 @@
               if(res.data.token){
               	profileService.setEmail(form.email)
               	profileService.setToken(res.data.token)
+              	toastr.success('Loggin In!')
               	$state.go('app.board',null,{ reload: true })
 					
               }
@@ -43,7 +44,7 @@
 
 			$http.post('http://localhost:8080/api/users/', form)
 			  .then(function(res) {
-              
+              toastr.success('All signed up! Please Login!')
               console.log(res.data.message);
               $state.go('app.landing');
 

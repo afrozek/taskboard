@@ -23,8 +23,8 @@
 				<div class="sectionBody">
 					
 					<!-- add task input -->
-					<input type="text" ng-model="board.newCardName" class="fullWidth" placeholder="Enter Task Title">
-					<button class="fullWidth bottomMargin" ng-click="board.addCard($index, board.newCardName)">Add Task</button>
+					<input type="text" ng-model="board.newCardName[$index]" class="fullWidth" placeholder="Enter Task Title">
+					<button class="fullWidth bottomMargin" ng-click="board.addCard($index, board.newCardName[$index])">Add Task</button>
 
 					<div class="taskContainer" ng-repeat="card in column.cards track by $index">
 						<div class="taskHeader">
@@ -35,13 +35,15 @@
 
 						<div class="taskBody">
 
-							<!-- add card bullet -->
-							<input type="text" ng-model="board.newCardBullet" class="fullWidth" placeholder="Enter Task Title">
-							<button class="fullWidth bottomMargin" ng-click="board.addCardBullet($parent.$index, $index, board.newCardBullet )">Add Task</button>
+							
 
 							<ul>
 								<li ng-repeat="bullet in card.content track by $index">{{bullet}}</li>
 							</ul>
+
+							<!-- add card bullet -->
+							<input type="text" ng-model="board.newCardBullet[$parent.$index][$index]" class="fullWidth" placeholder="Enter Task Title">
+							<button class="fullWidth bottomMargin" ng-click="board.addCardBullet($parent.$index, $index, board.newCardBullet[$parent.$index][$index] )">Add Task</button>
 
 						</div>
 

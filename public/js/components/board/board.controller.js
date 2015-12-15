@@ -11,7 +11,6 @@
 
 	    var vm = this;
 	    boardInit();
-	    profileService.info();
 
 	    vm.boardInit = boardInit;
 	    // vm.refresh = refresh;
@@ -25,6 +24,7 @@
 	    function boardInit() {
 	      /* */
 	      console.log("initializing board");
+	      console.log(profileService.getProfile());
 	      //boardService.getBoard();
 	    }
 

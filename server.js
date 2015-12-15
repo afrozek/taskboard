@@ -32,6 +32,9 @@ app.use('/api/users', users);
 var boards = require('./app/components/boards')(app, express);
 app.use('/api/boards', boards);
 
+var mailer = require('./app/components/mailer')(app, express);
+app.use('/api/mailer', mailer);
+
 app.get('*', function (req, res) {
 	res.sendFile(__dirname + '/public/index.html');
 });

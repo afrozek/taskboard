@@ -40,10 +40,17 @@ function sideMenuCtrl ($scope, authService, profileService, boardService, $http,
 
 				boardService.updateBoard(vm.currentBoard._id, vm.currentBoard)
 					.then(function (res) {
-						vm.collaborators = boardService.getBoard()
+						boardService.getBoard()
 							.then(function (res) {
 						    	vm.collaborators = res.data.collaborators;
 						    });
+
+						var mailerObj = {
+							newUser: $scope.userToInvite,
+							board: vm.currentBoard
+						}
+
+						$http.post('/api/mailer', mailerObj);
 					});
 			});
 	};

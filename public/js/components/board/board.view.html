@@ -2,7 +2,7 @@
 <div class="container-fluid boardContainer hasHeader" ng-controller="boardCtrl as board">
 	<div class="container board">
 		<div class="row outline boardHeader blackGradient">
-			<h2 class="boardTitle">{{board.board.title}} dogs {{menu.title}}</h2>
+			<h2 class="boardTitle">{{board.board.title}}</h2>
 		</div>
 
 		
@@ -11,7 +11,7 @@
 		<!-- column -->
 			<div class="sectionContainer col-md-3 clearPadding outline" ng-repeat="column in board.board.columns">
 				<div class="sectionHeader">
-					<h2 class="sectionTitle silverGradient clearMargin centerText" >{{column.title}}</h2>
+					<h2 class="sectionTitle silverGradient clearMargin centerText" >Title:{{column.title}}</h2>
 				</div>
 				<div class="sectionBody">
 

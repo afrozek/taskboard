@@ -15,6 +15,7 @@
 
 	    vm.board = boardService.getBoard().then(function (res) {
 	    	vm.board = res.data;
+	    	console.log(vm.board);
 	    });
 
 	   // vm.boardInit = boardInit;

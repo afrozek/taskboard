@@ -3,6 +3,7 @@
 	<div class="container board">
 		<div class="row outline boardHeader blackGradient">
 			<h2 class="boardTitle">{{board.board.title}}</h2>
+			<button ng-if="board.board.columns.length == 0 || board.board.columns.length < 4" class="floatRight">add column</button>
 		</div>
 
 		
@@ -12,6 +13,8 @@
 			<div class="sectionContainer col-md-3 clearPadding outline" ng-repeat="column in board.board.columns">
 				<div class="sectionHeader">
 					<h2 class="sectionTitle silverGradient clearMargin centerText" >Title:{{column.title}}</h2>
+
+
 				</div>
 				<div class="sectionBody">
 

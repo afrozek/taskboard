@@ -8,35 +8,18 @@
 	boardCtrl.inject = ['boardService','profileService','authService','$http']
 
 	function boardCtrl(boardService,profileService,authService,$http) {
-
 	    var vm = this;
 
-	    vm.title = "dogs"
 
+	    //gets the selected board from sidemenu
 	    vm.board = boardService.getBoard().then(function (res) {
 	    	vm.board = res.data;
 	    	console.log(vm.board);
 	    });
 
-	   // vm.boardInit = boardInit;
-
-	    
 
 
-	    ////////////
 
-
-	    function boardInit() {
-	 
-	    }
-
-	    // function refresh() {
-	    //   /* */
-	    // }
-
-	    // function search() {
-	    //   /* */
-	    // }
 	}
 
 })()

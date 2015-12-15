@@ -45,6 +45,7 @@
 			  .then(function(res) {
               
               console.log(res.data.message);
+              $state.go('app.landing');
 
             }, function(err) {
               //toastr.error('Failed: ' + err.data);

@@ -2,9 +2,9 @@ angular
 	.module('landing', [])
 	.controller('landingCtrl', landingCtrl);
 
-	landingCtrl.$inject = ['$scope', 'usersFactory','sampleService'];
+	landingCtrl.$inject = ['$scope', 'usersFactory','sampleService','$state'];
 
-function landingCtrl ($scope, usersFactory, sampleService) {
+function landingCtrl ($scope, usersFactory, sampleService, $state) {
 	$scope.login = login;
 	$scope.signup = signup;
 
@@ -23,6 +23,7 @@ function landingCtrl ($scope, usersFactory, sampleService) {
 	function signup () {
 		console.log('signing up');
 		usersFactory.signup($scope.formData)
+		
 			// .then(function (res) {
 			// 	console.log(res);
 			// });

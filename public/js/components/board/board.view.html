@@ -4,10 +4,10 @@
 		<div class="row outline boardHeader blackGradient">
 			<h2 class="boardTitle">{{board.board.title}}</h2>
 			
-			<div class="floatRight">
+			<div class="floatRight" ng-if="board.board.columns.length == 0 || board.board.columns.length < 4">
 				<input ng-model="board.columnTitle"  type="text">
-				<button ng-if="board.board.columns.length == 0 || board.board.columns.length < 4"  ng-click="board.addColumn(board.columnTitle)"> add column</button>
-							</div>
+				<button   ng-click="board.addColumn(board.columnTitle)"> add column</button>
+			</div>
 		</div>
 
 		

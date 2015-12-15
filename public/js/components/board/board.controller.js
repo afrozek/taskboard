@@ -28,26 +28,46 @@
 	    //add column
 	    vm.addColumn = function (columnTitle) {
 	    	if (columnTitle){
-		    	vm.board.columns.push({title: columnTitle, content:["sampletask"]});
-		    	boardService.updateBoard(vm.boardId,vm.board);
-		    	// vm.boardInit();
-	    	} 
+	    		
+			    	vm.board.columns.push({title: columnTitle, content:["sampletask"]});
+			    	
+			    	boardService.updateBoard(vm.boardId,vm.board)
+			    	.then(function(res){
+			    		console.log(res.data)
+		    		});
+		    }
+		    //if input field empty
 	    	else console.log("please enter a column name")
-	    	
+
+	    	console.log("adding Column");
+	    	console.log(vm.board)
 	    }
+
+
+
+
+
 
 		//add card
 	    vm.addCard = function (index,cardTitle) {
 
+	    	//check if cards array exists
 	    	if (vm.board.columns[index].cards == undefined){
+	    		//if it doesnt, make a new array with first card
 		    		vm.board.columns[index].cards = [{title: cardTitle}]
 		    	}
-		    	else{
-		    		vm.board.columns[index].cards.push({title: cardTitle})
-		    	}
 
-		    	boardService.updateBoard(vm.boardId,vm.board);
-		    	// vm.boardInit();	
+		    	//else just push a new card with title
+	    	else {  
+	    		vm.board.columns[index].cards.push({title: cardTitle})
+	    	}
+	    	console.log("adding card");
+	    	console.log(vm.board)
+
+	    	boardService.updateBoard(vm.boardId,vm.board).then(function(res){
+	    		console.log(res.data)
+	    	});
+	    	// vm.boardInit();	
 	    }
 
 

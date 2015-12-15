@@ -17,6 +17,14 @@ body{
 	padding: 0
 }
 
+.hoverables {
+	cursor: pointer;
+}
+
+.hoverables:hover {
+	opacity: 0.3;
+}
+
 .clearMargin{
 	margin: 0;
 }

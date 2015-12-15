@@ -32,6 +32,10 @@ function sideMenuCtrl ($scope, authService, profileService, boardService, $http,
 	    	vm.collaborators = res.data.collaborators;
 	    });
 
+	vm.inviteUser = function () {
+		
+	};
+
 
 	/////////////////
 

@@ -41,7 +41,7 @@
 			<div class="manageInputs col-lg-12 ">
 			    <!-- list of boards -->
 			    <ul class="checklist">
-				  <li class="blackGradient" ng-repeat="member in menu.collaborators">
+				  <li class="blackGradient" ng-repeat="member in menu.collaborators track by $index">
 				  	<input class="col-xs-2" type="checkbox" value="{{member}}"><a class="col-xs-10" href="">{{member}}</a>
 				  </li>
 				</ul>

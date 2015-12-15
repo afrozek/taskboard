@@ -33,6 +33,13 @@
 				controllerAs: 'board'
 			})
 
+			.state('app.signup', {
+				url: 'signup',
+				templateUrl: 'js/components/landing/templates/signup.html',
+				controller: 'landingCtrl'
+				//controllerAs: 'board'
+			})
+
 
 			
 

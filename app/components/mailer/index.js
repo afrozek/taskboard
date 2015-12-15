@@ -18,7 +18,7 @@ function mailerRoutes (app, express) {
 
 		var emailSubject = 'Taskboard Admin: Invitation to join ' + req.body.board.title;
 
-		var emailText = '<h1>Hello!</h1>' + req.body.board.owner + ' has invited you to join his board at taskboard! Click here: <a href="http://localhost:8080/">To sign up</a>';
+		var emailText = '<h1>Hello!</h1>' + req.body.board.owner + ' has invited you to join his board at taskboard! Click here: <a href="http://localhost:8080/#/signup">To sign up</a>';
 
 		var mailOptions = {
 			to: req.body.newUser,

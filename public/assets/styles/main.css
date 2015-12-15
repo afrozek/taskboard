@@ -103,6 +103,9 @@ h1,h2,h3,h4{
 
 }
 
+.white{
+	color: white;
+}
 /*content*/
 .landing{
 	color: black;

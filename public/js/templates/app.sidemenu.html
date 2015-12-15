@@ -9,50 +9,13 @@
 				<span class="glyphicon glyphicon-tasks menuIcon col-xs-2" aria-hidden="true"></span>
 			</div>
 			<div class="manageInputs col-lg-12 ">
-				
-			    <div class="input-group ">
-			      <span class="input-group-addon">
-			        <input type="checkbox" aria-label="...">
-			      </span>
-			      <input type="text" class="form-control" aria-label="...">
-			    </div><!-- /input-group -->
-			    <div class="input-group">
-			      <span class="input-group-addon">
-			        <input type="checkbox" aria-label="...">
-			      </span>
-			      <input type="text" class="form-control" aria-label="...">
-			    </div><!-- /input-group -->
-			    <div class="input-group">
-			      <span class="input-group-addon ">
-			        <input type="checkbox" aria-label="...">
-			      </span>
-			      <input type="text" class="form-control" aria-label="...">
-			    </div><!-- /input-group -->
-			    <div class="input-group">
-			      <span class="input-group-addon ">
-			        <input type="checkbox" aria-label="...">
-			      </span>
-			      <input type="text" class="form-control" aria-label="...">
-			    </div><!-- /input-group -->
-			    <div class="input-group">
-			      <span class="input-group-addon ">
-			        <input type="checkbox" aria-label="...">
-			      </span>
-			      <input type="text" class="form-control" aria-label="...">
-			    </div><!-- /input-group -->
-			    <div class="input-group">
-			      <span class="input-group-addon ">
-			        <input type="checkbox" aria-label="...">
-			      </span>
-			      <input type="text" class="form-control" aria-label="...">
-			    </div><!-- /input-group -->
-			    <div class="input-group">
-			      <span class="input-group-addon ">
-			        <input type="checkbox" aria-label="...">
-			      </span>
-			      
-			      <input type="text" class="form-control" aria-label="...">
-			    </div><!-- /input-group -->
+			    
+			    <ul class="checklist">
+				  <li class="blackGradient" ng-repeat="board in menu.boards">
+				  	<input class="col-xs-2" type="checkbox"><a class="col-xs-10" href="">{{board.title}}</a>
+				  </li>
+				</ul>
+
 			
 			   
 			        <button class="btn btn-block btn-danger topMargin bottomMargin" type="button">Delete</button>

@@ -7,6 +7,10 @@ body{
 	background-size: cover;
 }
 
+/*colors*/
+
+
+
 /*helpers*/
 
 .clearPadding{
@@ -117,6 +121,24 @@ h1,h2,h3,h4{
     margin: 0;
     padding: 25px;
 }
+
+.sideMenu .checklist{
+	list-style-type: none;
+	color: #b1fc12;
+	overflow: auto;
+	margin: 0;
+	padding: 0;
+}
+
+.sideMenu .checklist li {color: white;overflow: aut0;/* display: block; *//* clear: both; */overflow: auto;/* background: #212120; */margin-bottom: 3px;padding: 3px;border-radius: 7px;border: 1px solid #272924;}
+
+
+.sideMenu .checklist li a{
+
+	color: #b1fc12;
+}
+
+.sideMenu .checklist input[type=checkbox]{/* margin: 0; *//* padding: 8px !important; *//* display: block; *//* width: 15px; */}
 
 
 

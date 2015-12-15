@@ -3,9 +3,9 @@
 		.module('landing')
 		.factory('usersFactory', usersFactory);
 
-	usersFactory.$inject = ['$http','$state'];
+	usersFactory.$inject = ['$http','$state','profileService'];
 
-	function usersFactory ($http,$state) {
+	function usersFactory ($http,$state,profileService) {
 		var usersApi = '/api/users';
 
 		var factory = {
@@ -21,11 +21,13 @@
 			$http.post('http://localhost:8080/api/auth/', form)
 			  .then(function(res) {
               
-              console.log(res.data);
+              //console.log(res.data);
 
               if(res.data.token){
+              	profileService.setEmail(form.email)
+              	profileService.setToken(res.data.token)
               	$state.go('app.board')
-				sessionStorage.setItem('token',res.data.token)	
+					
               }
 
               

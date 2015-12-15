@@ -11,7 +11,9 @@
     	var service = {
 
     		getBoards: getBoards,
-            // currentBoard: currentBoard,
+            getBoard: getBoard,
+            updateBoard: updateBoard,
+            setBoardId: setBoardId,
     		info: info,
     		success: success
 
@@ -24,8 +26,26 @@
     	////////////
 
     	function getBoards(email, id) {
-        return  $http.post('http://localhost:8080/api/boards/byEmail',{owner: email})
+            return  $http.post('http://localhost:8080/api/boards/byEmail',{owner: email})
 	    }
+
+        function updateBoard(id, newBoardData) {
+            return $http.put("http://localhost:8080/api/boards/" + id , newBoardData);
+        }
+
+        function setBoardId(boardId){
+            sessionStorage.setItem('boardId', boardId);
+        }
+
+        function getBoard(){
+            var boardId = sessionStorage.getItem('boardId');
+            
+            if(typeof(boardId) == "null" || typeof(boardId) == "undefined" ){
+               console.log("no board selected"); 
+            } 
+            else return $http.get("http://localhost:8080/api/boards/" + boardId );
+             
+        }
 
 	    function info() {
 	      /* */

@@ -10,24 +10,96 @@
 	function boardCtrl(boardService,profileService,authService) {
 
 	    var vm = this;
-	    boardInit();
-	    authService.info();
-	    console.log(authService.isLogged());
+
+	    vm.title = "dogs"
+
+	    vm.board = {
+						owner: "muz@gmail.com",
+						title: "ma board",
+						collaborators: ["auk2@njit.edu","yazeed@gmail.com"],	
+						columns:
+							[{
+								 title:"backlog",
+								 cards:
+								 [
+									{
+										title: "shopping",
+										content: ["eggs","apples","bananas"]
+									},
+									{
+										title: "hw",
+										content: ["is218","capstone","hss"]
+									},
+									{
+										title: "workout",
+										content: ["50 Threes","100 left layups"]
+									}
+								]
+							},
+							{
+								 title:"todo",
+								 cards:
+								 [
+									{
+										title: "shopping",
+										content: ["eggs","apples","bananas"]
+									},
+									{
+										title: "hw",
+										content: ["is218","capstone","hss"]
+									},
+									{
+										title: "workout",
+										content: ["50 Threes","100 left layups"]
+									}
+								]
+							},
+							{
+								 title:"doing",
+								 cards:
+								 [
+									{
+										title: "shopping",
+										content: ["eggs","apples","bananas"]
+									},
+									{
+										title: "hw",
+										content: ["is218","capstone","hss"]
+									},
+									{
+										title: "workout",
+										content: ["50 Threes","100 left layups"]
+									}
+								]
+							},
+							{
+								 title:"QA",
+								 cards:
+								 [
+									{
+										title: "shopping",
+										content: ["eggs","apples","bananas"]
+									},
+									{
+										title: "hw",
+										content: ["is218","capstone","hss"]
+									},
+									{
+										title: "workout",
+										content: ["50 Threes","100 left layups"]
+									}
+								]
+							}]
+				   }
 
 	    vm.boardInit = boardInit;
-	    // vm.refresh = refresh;
-	    // vm.search = search;
-	    // vm.sessions = [];
-	    // vm.title = 'board';
+
 
 	    ////////////
 
 
 	    function boardInit() {
-	      /* */
-	      console.log("initializing board");
-	      console.log(profileService.getProfile());
-	      //boardService.getBoard();
+	 
 	    }
 
 	    // function refresh() {

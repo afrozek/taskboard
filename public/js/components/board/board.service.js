@@ -5,23 +5,26 @@
     	.module('board')
     	.factory('boardService', boardService);
 
-    //boardService.inject = ['']
+    boardService.inject = ['$http']
 
-    function boardService() {
+    function boardService( $http ) {
     	var service = {
 
-    		error: error,
+    		getBoards: getBoards,
+            // currentBoard: currentBoard,
     		info: info,
     		success: success
 
     	};
 
+
+
     	return service;
 
     	////////////
 
-    	function error() {
-	      /* */
+    	function getBoards(email, id) {
+        return  $http.post('http://localhost:8080/api/boards/byEmail',{owner: email})
 	    }
 
 	    function info() {

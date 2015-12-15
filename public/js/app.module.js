@@ -1,6 +1,6 @@
 (function () {
 	angular
-	    .module('app', [ 'ui.router','landing','sample','board'])
+	    .module('app', [ 'ui.router','landing','sample','board','profile'])
 	    .config(routeConfig);
 
 	routeConfig.$inject = ['$locationProvider', '$urlRouterProvider', '$stateProvider'];

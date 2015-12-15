@@ -70,8 +70,13 @@
 	    }
 
 	    vm.addCardBullet = function (columnIndex,cardIndex,bulletString) {
-	    	debugger;
+
 	    	vm.board.columns[columnIndex].cards[cardIndex].content.push(bulletString);
+
+	    	boardService.updateBoard(vm.boardId,vm.board).then(function(res){
+	    		//console.log(res.data)
+	    		 vm.boardInit();	
+	    	});
 	    }
 
 

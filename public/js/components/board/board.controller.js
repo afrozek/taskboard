@@ -79,6 +79,24 @@
 	    	});
 	    }
 
+	    vm.moveCardRight = function (columnIndex, cardIndex) {
+	    	//var currentColumn = vm.board.columns[columnIndex];
+	    	var currentColumnIndex = columnIndex;
+	    	var currentCardIndex = cardIndex;
+
+	    	var nextColumnIndex = currentColumnIndex + 1;
+	    	
+	    	console.log("current column index: " + currentColumnIndex );
+	    	console.log("current card index: " + currentCardIndex );
+	    	console.log("next column index: " + nextColumnIndex);
+
+	    	vm.board.columns[nextColumnIndex].cards.push({title:"moving",content:['moving content','moving..']})
+	    }
+
+	    vm.moveCardLeft = function () {
+
+	    }
+
 
 
 

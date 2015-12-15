@@ -1,9 +1,9 @@
 
 <!-- sidemenu -->
-<ng-include src="'js/includes/sidemenu.html'"></ng-include>
+<ng-include src="'templates/app.sidemenu.html'"></ng-include>
 
 <!-- nav -->
-<div class="container-fluid fixed fullWidth clearPadding navsContainer">
+
 	<span class="glyphicon glyphicon-menu-hamburger menuIcon sideMenuNavIcon col-xs-2" aria-hidden="true" ng-click="navStatus = !navStatus"></span>
 	<div class="container-fluid navContainer blackGradient ">
 		<div class="container">
@@ -19,7 +19,7 @@
 			</span>
 		</div>
 	</div>
-</div>
+
 
 <!-- nested view -->
 <div ui-view></div>

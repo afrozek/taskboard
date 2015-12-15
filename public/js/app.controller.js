@@ -9,7 +9,11 @@ function appCtrl ($scope, authService, profileService) {
 
 	$scope.loggedIn = authService.isLogged();
 	$scope.email = profileService.getEmail();
-	$scope.logout = authService.logout(); 
+	$scope.logout = logout; 
+
+	function logout(){
+		authService.logout();
+	}
 
 
 

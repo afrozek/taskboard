@@ -5,9 +5,9 @@
 		.module('board')
 		.controller('boardCtrl', boardCtrl)
 
-	boardCtrl.inject = ['boardService','profileService','authService']
+	boardCtrl.inject = ['boardService','profileService','authService','$http']
 
-	function boardCtrl(boardService,profileService,authService) {
+	function boardCtrl(boardService,profileService,authService,$http) {
 
 	    var vm = this;
 
@@ -15,7 +15,7 @@
 
 	    vm.board = {
 						owner: "muz@gmail.com",
-						title: "ma board",
+						title: "rabbit board",
 						collaborators: ["auk2@njit.edu","yazeed@gmail.com"],	
 						columns:
 							[{
@@ -81,6 +81,10 @@
 				   }
 
 	    vm.boardInit = boardInit;
+
+	    $http.put("http://localhost:8080/api/boards/566f91a3f25efae91e49b210",vm.board).then(function(res){
+	    	console.log(res.data)
+	    })
 
 
 	    ////////////

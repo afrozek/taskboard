@@ -109,15 +109,14 @@ h1,h2,h3,h4{
 
 .sideMenu {
 	position: fixed;
-	z-index: 99;
-	!top: 102px;
+	z-index: 98;!top:102px;
 	height: 100%;
 	border-right: 2px solid #b1fc12;
 	box-shadow: 0px 0px 20px 2px black;
 	width: 300px;
 	left: -300px;
 	display: none;
-	top: 66px;
+	padding-top: 113px;
 	overflow: scroll;
 	transition: .3s;
 }

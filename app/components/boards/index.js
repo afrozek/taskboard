@@ -6,9 +6,9 @@ var passportJwt = require('../auth/jwtStrategy.js')();
 function BoardRoutes (app, express) {
 	var boardsApi = express.Router();
 
-	boardsApi.use(passportJwt, function (req, res, next) {
-		next();
-	});
+	// boardsApi.use(passportJwt, function (req, res, next) {
+	// 	next();
+	// });
 
 	boardsApi.route('/')
 
@@ -94,6 +94,19 @@ function BoardRoutes (app, express) {
 						})
 				});
 		});
+
+
+	boardsApi.post('/byEmail', function (req,res) {
+
+		dbInterface.getFromDb('Board', { owner: req.body.owner }, null, false)
+				.exec(function (err, boards) {
+					if (err)
+						return res.send(err);
+
+					res.json(boards);
+				});
+
+	})
 
 	//After configuring router, make sure to return it
 	return boardsApi;

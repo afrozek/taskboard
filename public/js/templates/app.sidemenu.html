@@ -1,11 +1,11 @@
 
-<div class="container sideMenu blackGradient clearPadding"  ng-class="{show: navStatus == true}" >
+<div ng-controller="sideMenuCtrl as menu" class="container sideMenu blackGradient clearPadding"  ng-class="{show: navStatus == true}" >
 
 
 	<div class="menuItem">
 		<div class=" clearPadding">
 			<div class="itemHeading">
-				<h3 class="col-xs-10">Manage Boards</h3>
+				<h3 class="col-xs-10">{{menu.title}}</h3>
 				<span class="glyphicon glyphicon-tasks menuIcon col-xs-2" aria-hidden="true"></span>
 			</div>
 			<div class="manageInputs col-lg-12 ">

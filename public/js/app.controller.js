@@ -1,6 +1,6 @@
 angular
 	.module('app')
-	.controller('appCtrl', appCtrl);
+	.controller('appCtrl', appCtrl)
 
 	appCtrl.$inject = ['$scope','authService','profileService'];
 
@@ -14,8 +14,5 @@ function appCtrl ($scope, authService, profileService) {
 		authService.logout();
 	}
 
-	
-
-
-
 }
+

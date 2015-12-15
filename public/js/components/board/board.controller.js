@@ -41,16 +41,8 @@
 								 cards:
 								 [
 									{
-										title: "shopping",
-										content: ["eggs","apples","bananas"]
-									},
-									{
-										title: "hw",
-										content: ["is218","capstone","hss"]
-									},
-									{
-										title: "workout",
-										content: ["50 Threes","100 left layups"]
+										title: "Hiking",
+										content: ["go hiking with fred"]
 									}
 								]
 							},
@@ -59,16 +51,16 @@
 								 cards:
 								 [
 									{
-										title: "shopping",
-										content: ["eggs","apples","bananas"]
+										title: "animals",
+										content: ["dogs","cats","rabbits"]
 									},
 									{
-										title: "hw",
-										content: ["is218","capstone","hss"]
+										title: "fruits",
+										content: ["strawberries","berries","beta berries"]
 									},
 									{
-										title: "workout",
-										content: ["50 Threes","100 left layups"]
+										title: "india",
+										content: ["mangoes","rickshaws"]
 									}
 								]
 							},
@@ -77,16 +69,12 @@
 								 cards:
 								 [
 									{
-										title: "shopping",
-										content: ["eggs","apples","bananas"]
+										title: "Protons",
+										content: ["Jimmy","Neutron","Croutons"]
 									},
 									{
-										title: "hw",
-										content: ["is218","capstone","hss"]
-									},
-									{
-										title: "workout",
-										content: ["50 Threes","100 left layups"]
+										title: "Gym",
+										content: ["Pushups","Pushdowns","Chucknorris"]
 									}
 								]
 							}]

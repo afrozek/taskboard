@@ -18,7 +18,6 @@
 		    	vm.board = res.data;
 
 		    	//console.log(vm.board);
-		    	//vm.board.columns[0].cards[0].content.push("cats");
 		    });
 
 
@@ -71,7 +70,8 @@
 	    }
 
 	    vm.addCardBullet = function (columnIndex,cardIndex,bulletString) {
-	     	vm.board.columns[0].cards[0].content.push("dogs");
+	    	debugger;
+	    	vm.board.columns[columnIndex].cards[cardIndex].content.push(bulletString);
 	    }
 
 

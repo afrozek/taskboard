@@ -32,15 +32,19 @@
 								{{card.title}}
 							</h3>
 						</div>
+
 						<div class="taskBody">
+
 							<!-- add card bullet -->
 							<input type="text" ng-model="board.newCardBullet" class="fullWidth" placeholder="Enter Task Title">
-							<button class="fullWidth bottomMargin" ng-click="board.addCardBullet($index, board.newCardBullet)">Add Task</button>
+							<button class="fullWidth bottomMargin" ng-click="board.addCardBullet($parent.$index, $index, board.newCardBullet )">Add Task</button>
 
 							<ul>
 								<li ng-repeat="bullet in card.content track by $index">{{bullet}}</li>
 							</ul>
+
 						</div>
+
 						<div class="taskFooter">
 							<div class="taskArrows silverGradient">
 								<span class="leftArrow floatLeft"><</span>

@@ -16,7 +16,9 @@
 
     		getProfile: getProfile,
     		getEmail: getEmail,
-    		getToken: getToken
+    		getToken: getToken,
+
+            clearProfile: clearProfile
 
     	};
 
@@ -28,26 +30,31 @@
 
         /*setters*/
         function setEmail(email) {
-          sessionStorage.setItem('email', email)
+            sessionStorage.setItem('email', email)
         }
 
         function setToken(token) {
-          sessionStorage.setItem('token', token)
+            sessionStorage.setItem('token', token)
         }
 
         /*getters*/
 
     	function getProfile() {
-	      return {email: sessionStorage.getItem('email'), token: sessionStorage.getItem('token')}
+	       return {email: sessionStorage.getItem('email'), token: sessionStorage.getItem('token')}
 	    }
 
 	    function getEmail() {
-	      return sessionStorage.getItem('email')
+	       return sessionStorage.getItem('email')
 	    }
 
 	    function getToken() {
-	      return sessionStorage.getItem('token')
+	       return sessionStorage.getItem('token')
 	    }
+
+        function clearProfile() {
+            console.log("clearing profile");
+            sessionStorage.clear()
+        }
 
 
     }

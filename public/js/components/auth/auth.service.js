@@ -5,13 +5,14 @@
     	.module('auth')
     	.factory('authService', authService);
 
-    authService.inject = ['profileService']
+    authService.inject = ['profileService','$state']
 
-    function authService( profileService ) {
+    function authService( profileService, $state ) {
 
     	var service = {
 
             isLogged: isLogged,
+            logout: logout,
             info: info
 
     	};
@@ -28,6 +29,15 @@
                 return true;
           }
 
+        }
+
+        function logout() {
+          if(isLogged){
+            console.log("logging out")
+            profileService.clearProfile();
+            $state.go('app.landing')
+
+          }
         }
 
 

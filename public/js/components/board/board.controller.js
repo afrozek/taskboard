@@ -5,12 +5,14 @@
 		.module('board')
 		.controller('boardCtrl', boardCtrl)
 
-	boardCtrl.inject = ['boardService','profileService']
+	boardCtrl.inject = ['boardService','profileService','authService']
 
-	function boardCtrl(boardService,profileService) {
+	function boardCtrl(boardService,profileService,authService) {
 
 	    var vm = this;
 	    boardInit();
+	    authService.info();
+	    console.log(authService.isLogged());
 
 	    vm.boardInit = boardInit;
 	    // vm.refresh = refresh;

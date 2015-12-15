@@ -1,6 +1,6 @@
 (function () {
 	angular
-	    .module('app', [ 'ui.router','landing','sample','board','profile'])
+	    .module('app', [ 'ui.router','landing','sample','board','profile','auth'])
 	    .config(routeConfig);
 
 	routeConfig.$inject = ['$locationProvider', '$urlRouterProvider', '$stateProvider'];
@@ -16,6 +16,7 @@
 			.state('app', {
 				url: '/',
 				templateUrl: 'js/app.home.html',
+				controller: 'appCtrl'
 			})
 
 			.state('app.landing', {

@@ -34,6 +34,7 @@
 			    	boardService.updateBoard(vm.boardId,vm.board)
 			    	.then(function(res){
 			    		console.log(res.data)
+			    		toastr.success('Column Added!')
 			    		vm.boardInit();	
 		    		});
 		    }
@@ -63,6 +64,7 @@
 	    	console.log(vm.board)
 
 	    	boardService.updateBoard(vm.boardId,vm.board).then(function(res){
+	    		toastr.success('Task Added!')
 	    		//console.log(res.data)
 	    		 vm.boardInit();	
 	    	});

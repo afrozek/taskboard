@@ -35,6 +35,7 @@
           if(isLogged){
             console.log("logging out")
             profileService.clearProfile();
+            toastr.success('Logging Out!')
             $state.go('app.landing',null,{ reload: true })
 
           }

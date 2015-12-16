@@ -51,7 +51,9 @@ function sideMenuCtrl ($scope, authService, profileService, boardService, $http,
 						}
 
 						$http.post('/api/mailer', mailerObj);
+						toastr.success('Email Sent!')
 					});
+					
 			});
 	};
 
